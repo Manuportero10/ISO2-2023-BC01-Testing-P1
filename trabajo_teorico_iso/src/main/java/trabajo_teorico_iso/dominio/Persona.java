@@ -59,6 +59,11 @@ public class Persona {
     }
     
     public boolean es_mayor_de_edad() throws MenorEdadException, NumeroNegativoException {
+
+        if (this.nacimiento <= 0) {
+            throw new NumeroNegativoException("El numero es negativo");
+        }
+
         if (2023 - this.nacimiento >= 18) {
             return true;
         } else {
