@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Persona.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">trabajo_teorico_iso</a> &gt; <a href="index.source.html" class="el_package">trabajo_teorico_iso.dominio</a> &gt; <span class="el_source">Persona.java</span></div><h1>Persona.java</h1><pre class="source lang-java linenums">package trabajo_teorico_iso.dominio;
+import java.util.*;
+
+public class Persona {
+
+    private String nombre; 
+    private String apellidos; 
+    private int nacimiento; 
+    private String nacionalidad;
+    private NivelEducacion titulacion; 
+    private String certificado_ingles; 
+    private int numero_telefono;	 
+    private String correo_electronico; 
+        
+<span class="nc" id="L15">    public Persona(String nombre,String apellidos, int nacimiento, String nacionalidad, String titulacion, String certificado_ingles, int numero_telefono, String correo_electronico) { 	//constructor </span>
+        
+<span class="nc" id="L17">        this.nombre=nombre; </span>
+<span class="nc" id="L18">        this.apellidos=apellidos; </span>
+<span class="nc" id="L19">        this.nacimiento=nacimiento; </span>
+<span class="nc" id="L20">        this.nacionalidad=nacionalidad; </span>
+<span class="nc" id="L21">        this.titulacion=obtener_titulacion(titulacion); </span>
+<span class="nc" id="L22">        this.certificado_ingles=certificado_ingles; </span>
+<span class="nc" id="L23">        this.numero_telefono=numero_telefono; </span>
+<span class="nc" id="L24">        this.correo_electronico=correo_electronico;</span>
+        
+<span class="nc" id="L26">    }</span>
+
+    //----------------------------------------------------GETTERS----------------------------------------------------//
+    public String getNombre() {
+<span class="nc" id="L30">        return nombre;</span>
+    }
+
+    //----------------------------------------------------METODOS----------------------------------------------------//
+    private NivelEducacion obtener_titulacion(String titulacion){
+<span class="nc" id="L35">        NivelEducacion nivel = null;</span>
+<span class="nc bnc" id="L36" title="All 7 branches missed.">        switch (titulacion.toUpperCase()) {</span>
+            case &quot;GRADUADO ESCOLAR&quot;:
+<span class="nc" id="L38">                nivel = NivelEducacion.GRADUADO_ESCOLAR;</span>
+<span class="nc" id="L39">                break;</span>
+            case &quot;INSTITUTO&quot;:
+<span class="nc" id="L41">                nivel = NivelEducacion.INSTITUTO;</span>
+<span class="nc" id="L42">                break;</span>
+            case &quot;BACHILLER&quot;:
+<span class="nc" id="L44">                nivel = NivelEducacion.BACHILLER;</span>
+<span class="nc" id="L45">                break;</span>
+            case &quot;GRADO UNIVERSITARIO&quot;:
+<span class="nc" id="L47">                nivel = NivelEducacion.GRADO_UNIVERSITARIO;</span>
+<span class="nc" id="L48">                break;</span>
+            case &quot;MASTER&quot;:
+<span class="nc" id="L50">                nivel = NivelEducacion.MASTER;</span>
+<span class="nc" id="L51">                break;</span>
+            case &quot;DOCTORADO&quot;:
+<span class="nc" id="L53">                nivel = NivelEducacion.DOCTORADO;</span>
+<span class="nc" id="L54">                break;</span>
+            default:
+                break;
+        }
+<span class="nc" id="L58">        return nivel;</span>
+    }
+    
+    public boolean es_mayor_de_edad() throws MenorEdadException, NumeroNegativoException {
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        if (2023 - this.nacimiento &gt;= 18) {</span>
+<span class="nc" id="L63">            return true;</span>
+        } else {
+<span class="nc bnc" id="L65" title="All 2 branches missed.">            if (2023 - this.nacimiento &lt; 0) {</span>
+<span class="nc" id="L66">                throw new NumeroNegativoException(&quot;El numero es negativo&quot;);</span>
+            } else {
+<span class="nc" id="L68">                throw new MenorEdadException(&quot;La persona es menor de edad&quot;);</span>
+            }
+        }
+    }
+        
+    public boolean es_europeo() throws NoEuropeoException {
+<span class="nc" id="L74">        Map&lt;String, Integer&gt; Lista_nacionalidades_europeas = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L75">        generar_lista_nacionalidades_europeas(Lista_nacionalidades_europeas);</span>
+
+<span class="nc bnc" id="L77" title="All 2 branches missed.">        if (Lista_nacionalidades_europeas.containsKey(this.nacionalidad)) {</span>
+<span class="nc" id="L78">            return true;</span>
+        } else {
+<span class="nc" id="L80">            throw new NoEuropeoException(&quot;La persona no es europea&quot;);</span>
+        }
+    }
+
+    private void generar_lista_nacionalidades_europeas(Map&lt;String, Integer&gt; Lista_nacionalidades_europeas){
+<span class="nc" id="L85">        Lista_nacionalidades_europeas.put(&quot;alemana&quot;, 1);</span>
+<span class="nc" id="L86">        Lista_nacionalidades_europeas.put(&quot;austriaca&quot;, 1);</span>
+<span class="nc" id="L87">        Lista_nacionalidades_europeas.put(&quot;belga&quot;, 1);</span>
+<span class="nc" id="L88">        Lista_nacionalidades_europeas.put(&quot;bulgara&quot;, 1);</span>
+<span class="nc" id="L89">        Lista_nacionalidades_europeas.put(&quot;chipriota&quot;, 1);</span>
+<span class="nc" id="L90">        Lista_nacionalidades_europeas.put(&quot;croata&quot;, 1);</span>
+<span class="nc" id="L91">        Lista_nacionalidades_europeas.put(&quot;danesa&quot;, 1);</span>
+<span class="nc" id="L92">        Lista_nacionalidades_europeas.put(&quot;eslovaca&quot;, 1);</span>
+<span class="nc" id="L93">        Lista_nacionalidades_europeas.put(&quot;eslovena&quot;, 1);</span>
+<span class="nc" id="L94">        Lista_nacionalidades_europeas.put(&quot;espanola&quot;, 1);</span>
+<span class="nc" id="L95">        Lista_nacionalidades_europeas.put(&quot;estionio&quot;, 1);</span>
+<span class="nc" id="L96">        Lista_nacionalidades_europeas.put(&quot;finlandesa&quot;, 1);</span>
+<span class="nc" id="L97">        Lista_nacionalidades_europeas.put(&quot;francesa&quot;, 1);</span>
+<span class="nc" id="L98">        Lista_nacionalidades_europeas.put(&quot;heleno&quot;, 1);</span>
+<span class="nc" id="L99">        Lista_nacionalidades_europeas.put(&quot;hungara&quot;, 1);</span>
+<span class="nc" id="L100">        Lista_nacionalidades_europeas.put(&quot;irlandesa&quot;, 1);</span>
+<span class="nc" id="L101">        Lista_nacionalidades_europeas.put(&quot;italiana&quot;, 1);</span>
+<span class="nc" id="L102">        Lista_nacionalidades_europeas.put(&quot;letonesa&quot;, 1);</span>
+<span class="nc" id="L103">        Lista_nacionalidades_europeas.put(&quot;lituana&quot;, 1);</span>
+<span class="nc" id="L104">        Lista_nacionalidades_europeas.put(&quot;luxemburguesa&quot;, 1);</span>
+<span class="nc" id="L105">        Lista_nacionalidades_europeas.put(&quot;maltesa&quot;, 1);</span>
+<span class="nc" id="L106">        Lista_nacionalidades_europeas.put(&quot;holandesa&quot;, 1);</span>
+<span class="nc" id="L107">        Lista_nacionalidades_europeas.put(&quot;polaca&quot;, 1);</span>
+<span class="nc" id="L108">        Lista_nacionalidades_europeas.put(&quot;portuguesa&quot;, 1);</span>
+<span class="nc" id="L109">        Lista_nacionalidades_europeas.put(&quot;britanico&quot;, 1);</span>
+<span class="nc" id="L110">        Lista_nacionalidades_europeas.put(&quot;checa&quot;, 1);</span>
+<span class="nc" id="L111">        Lista_nacionalidades_europeas.put(&quot;rumana&quot;, 1);</span>
+<span class="nc" id="L112">        Lista_nacionalidades_europeas.put(&quot;sueca&quot;, 1);</span>
+<span class="nc" id="L113">    }</span>
+        
+    public boolean apuntarse_doctorado() throws MenorEdadException, NumeroNegativoException {
+<span class="nc bnc" id="L116" title="All 4 branches missed.">        if (es_mayor_de_edad() &amp;&amp; this.titulacion.compareTo(NivelEducacion.MASTER) &gt;= 0) {</span>
+<span class="nc" id="L117">            return true;</span>
+        } else {
+<span class="nc" id="L119">            return false;</span>
+        }
+    }
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

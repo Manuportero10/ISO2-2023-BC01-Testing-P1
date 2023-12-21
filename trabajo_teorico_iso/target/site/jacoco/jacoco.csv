@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+trabajo_teorico_iso,trabajo_teorico_iso.dominio,NivelEducacion,64,0,0,0,7,0,1,0,1,0
+trabajo_teorico_iso,trabajo_teorico_iso.dominio,Persona,283,0,17,0,68,0,18,0,7,0
+trabajo_teorico_iso,trabajo_teorico_iso.dominio,MenorEdadException,4,0,0,0,2,0,1,0,1,0
+trabajo_teorico_iso,trabajo_teorico_iso.dominio,NumeroNegativoException,4,0,0,0,2,0,1,0,1,0
+trabajo_teorico_iso,trabajo_teorico_iso.dominio,NoEuropeoException,4,0,0,0,2,0,1,0,1,0
+trabajo_teorico_iso,trabajo_teorico_iso,App,149,0,6,0,40,0,5,0,2,0
+trabajo_teorico_iso,trabajo_teorico_iso.presentacion,Interfaz,119,0,16,0,32,0,14,0,6,0
