@@ -1,7 +1,7 @@
-C:\Users\manup\OneDrive\Escritorio\Git\ISO2-2023-BC01-Testing-P1\trabajo_teorico_iso\src\main\java\trabajo_teorico_iso\presentacion\Interfaz.java
-C:\Users\manup\OneDrive\Escritorio\Git\ISO2-2023-BC01-Testing-P1\trabajo_teorico_iso\src\main\java\trabajo_teorico_iso\dominio\NivelEducacion.java
-C:\Users\manup\OneDrive\Escritorio\Git\ISO2-2023-BC01-Testing-P1\trabajo_teorico_iso\src\main\java\trabajo_teorico_iso\dominio\NoEuropeoException.java
-C:\Users\manup\OneDrive\Escritorio\Git\ISO2-2023-BC01-Testing-P1\trabajo_teorico_iso\src\main\java\trabajo_teorico_iso\dominio\Persona.java
-C:\Users\manup\OneDrive\Escritorio\Git\ISO2-2023-BC01-Testing-P1\trabajo_teorico_iso\src\main\java\trabajo_teorico_iso\App.java
-C:\Users\manup\OneDrive\Escritorio\Git\ISO2-2023-BC01-Testing-P1\trabajo_teorico_iso\src\main\java\trabajo_teorico_iso\dominio\MenorEdadException.java
-C:\Users\manup\OneDrive\Escritorio\Git\ISO2-2023-BC01-Testing-P1\trabajo_teorico_iso\src\main\java\trabajo_teorico_iso\dominio\NumeroNegativoException.java
+/home/Luis/Documents/Git-Repositories/ISO2-2023-BC01-Testing-P1/trabajo_teorico_iso/src/main/java/trabajo_teorico_iso/presentacion/Interfaz.java
+/home/Luis/Documents/Git-Repositories/ISO2-2023-BC01-Testing-P1/trabajo_teorico_iso/src/main/java/trabajo_teorico_iso/dominio/MenorEdadException.java
+/home/Luis/Documents/Git-Repositories/ISO2-2023-BC01-Testing-P1/trabajo_teorico_iso/src/main/java/trabajo_teorico_iso/dominio/NoEuropeoException.java
+/home/Luis/Documents/Git-Repositories/ISO2-2023-BC01-Testing-P1/trabajo_teorico_iso/src/main/java/trabajo_teorico_iso/App.java
+/home/Luis/Documents/Git-Repositories/ISO2-2023-BC01-Testing-P1/trabajo_teorico_iso/src/main/java/trabajo_teorico_iso/dominio/NivelEducacion.java
+/home/Luis/Documents/Git-Repositories/ISO2-2023-BC01-Testing-P1/trabajo_teorico_iso/src/main/java/trabajo_teorico_iso/dominio/Persona.java
+/home/Luis/Documents/Git-Repositories/ISO2-2023-BC01-Testing-P1/trabajo_teorico_iso/src/main/java/trabajo_teorico_iso/dominio/NumeroNegativoException.java

@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Interfaz.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">trabajo_teorico_iso</a> &gt; <a href="index.source.html" class="el_package">trabajo_teorico_iso.presentacion</a> &gt; <span class="el_source">Interfaz.java</span></div><h1>Interfaz.java</h1><pre class="source lang-java linenums">package trabajo_teorico_iso.presentacion;
 import java.util.Scanner;
 
-<span class="nc" id="L4">public class Interfaz {</span>
-<span class="nc" id="L5">    public final Scanner sc = new Scanner(System.in);</span>
-<span class="nc" id="L6">    public final Scanner sc_int = new Scanner(System.in);</span>
+<span class="fc" id="L4">public class Interfaz {</span>
+<span class="fc" id="L5">    public final Scanner sc = new Scanner(System.in);</span>
+<span class="fc" id="L6">    public final Scanner sc_int = new Scanner(System.in);</span>
 
     public String leerString() {
-<span class="nc" id="L9">        String cadena = sc.nextLine();</span>
-<span class="nc" id="L10">        return cadena;</span>
+<span class="fc" id="L9">        String cadena = sc.nextLine();</span>
+<span class="fc" id="L10">        return cadena;</span>
     }
 
     public int leerInt() {
-<span class="nc" id="L14">        boolean seguir = true;</span>
-<span class="nc" id="L15">        int numero=0;</span>
+<span class="fc" id="L14">        boolean seguir = true;</span>
+<span class="fc" id="L15">        int numero=0;</span>
 
         do{
             try {
-<span class="nc" id="L19">                numero = sc_int.nextInt();</span>
-<span class="nc" id="L20">                seguir = false;</span>
-<span class="nc" id="L21">            } catch (Exception e) {</span>
-<span class="nc" id="L22">                System.out.println(&quot;Error al introducir el numero&quot;);</span>
-<span class="nc" id="L23">                sc_int.next();</span>
-<span class="nc" id="L24">                seguir = true;</span>
-            }
-<span class="nc bnc" id="L26" title="All 2 branches missed.">        }while(seguir);</span>
+<span class="fc" id="L19">                numero = sc_int.nextInt();</span>
+<span class="fc" id="L20">                seguir = false;</span>
+<span class="fc" id="L21">            } catch (Exception e) {</span>
+<span class="fc" id="L22">                System.out.println(&quot;Error al introducir el numero&quot;);</span>
+<span class="fc" id="L23">                sc_int.next();</span>
+<span class="fc" id="L24">                seguir = true;</span>
+<span class="fc" id="L25">            }</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        }while(seguir);</span>
 
-<span class="nc" id="L28">        return numero;</span>
+<span class="fc" id="L28">        return numero;</span>
     }
 
     public String leerTitulacion(){
         String titulacion;
 
-<span class="nc" id="L34">        mostrarTitulaciones();</span>
-<span class="nc" id="L35">        titulacion = sc.nextLine();</span>
+<span class="fc" id="L34">        mostrarTitulaciones();</span>
+<span class="fc" id="L35">        titulacion = sc.nextLine();</span>
 
-<span class="nc bnc" id="L37" title="All 2 branches missed.">        while (!comprobarTitulacion(titulacion)) {</span>
-<span class="nc" id="L38">            System.out.println(&quot;Error al introducir la titulacion&quot;);</span>
-<span class="nc" id="L39">            titulacion = sc.nextLine();</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        while (!comprobarTitulacion(titulacion)) {</span>
+<span class="fc" id="L38">            System.out.println(&quot;Error al introducir la titulacion&quot;);</span>
+<span class="fc" id="L39">            titulacion = sc.nextLine();</span>
         }
         
-<span class="nc" id="L42">        return titulacion;</span>
+<span class="fc" id="L42">        return titulacion;</span>
     }
 
     private boolean comprobarTitulacion(String titulacion){
-<span class="nc bnc" id="L46" title="All 6 branches missed.">        if(titulacion.toUpperCase().equals(&quot;GRADUADO ESCOLAR&quot;) || titulacion.toUpperCase().equals(&quot;INSTITUTO&quot;) || titulacion.toUpperCase().equals(&quot;BACHILLER&quot;) || </span>
-<span class="nc bnc" id="L47" title="All 6 branches missed.">            titulacion.toUpperCase().equals(&quot;GRADO UNIVERSITARIO&quot;) || titulacion.toUpperCase().equals(&quot;MASTER&quot;) || titulacion.toUpperCase().equals(&quot;DOCTORADO&quot;)){</span>
-<span class="nc" id="L48">            return true;</span>
+<span class="pc bpc" id="L46" title="2 of 6 branches missed.">        if(titulacion.toUpperCase().equals(&quot;GRADUADO ESCOLAR&quot;) || titulacion.toUpperCase().equals(&quot;INSTITUTO&quot;) || titulacion.toUpperCase().equals(&quot;BACHILLER&quot;) || </span>
+<span class="pc bpc" id="L47" title="2 of 6 branches missed.">            titulacion.toUpperCase().equals(&quot;GRADO UNIVERSITARIO&quot;) || titulacion.toUpperCase().equals(&quot;MASTER&quot;) || titulacion.toUpperCase().equals(&quot;DOCTORADO&quot;)){</span>
+<span class="fc" id="L48">            return true;</span>
         }else{
-<span class="nc" id="L50">            return false;</span>
+<span class="fc" id="L50">            return false;</span>
         }
     }
 
     private void mostrarTitulaciones(){
-<span class="nc" id="L55">        System.out.println(&quot;GRADUADO ESCOLAR&quot;);</span>
-<span class="nc" id="L56">        System.out.println(&quot;INSTITUTO&quot;);</span>
-<span class="nc" id="L57">        System.out.println(&quot;BACHILLER&quot;);</span>
-<span class="nc" id="L58">        System.out.println(&quot;GRADO UNIVERSITARIO&quot;);</span>
-<span class="nc" id="L59">        System.out.println(&quot;MASTER&quot;);</span>
-<span class="nc" id="L60">        System.out.println(&quot;DOCTORADO\n--------------------------&quot;);</span>
-<span class="nc" id="L61">    }</span>
+<span class="fc" id="L55">        System.out.println(&quot;GRADUADO ESCOLAR&quot;);</span>
+<span class="fc" id="L56">        System.out.println(&quot;INSTITUTO&quot;);</span>
+<span class="fc" id="L57">        System.out.println(&quot;BACHILLER&quot;);</span>
+<span class="fc" id="L58">        System.out.println(&quot;GRADO UNIVERSITARIO&quot;);</span>
+<span class="fc" id="L59">        System.out.println(&quot;MASTER&quot;);</span>
+<span class="fc" id="L60">        System.out.println(&quot;DOCTORADO\n--------------------------&quot;);</span>
+<span class="fc" id="L61">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
